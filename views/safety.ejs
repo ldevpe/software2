@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8" />
+  <title>Live Editor | Challenger Week L`devpe`</title>
+  <meta name="description" content="Preview HTML, CSS, and JavaScript live in your browser in realtime." />
+  <meta name="keywords" content="editor, realtime editor, jsfiddle, codepen, stackoverflow, HTML, CSS, JavaScript" />
+  <meta property="og:title" content="Live Editor" />
+  <meta property="og:url" content="http://staticresource.com/editor" />
+  <meta property="og:description" content="Preview HTML, CSS, and JavaScript live in your browser in realtime." />
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  <link href="/global.css" rel="stylesheet">
+
+  <script src="/jquery.min.js" type="text/javascript"></script>
+  <script src="/editor.js" type="text/javascript"></script>
+
+ 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+
+  
+  <meta property="og:image" content="img/ico/thumb.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.10.15, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="/images/picture1-122x184.png" type="image/x-icon">
+  
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  
+<script language="javascript"type="text/javascript">
+  $(window).bind('beforeunload',function (){
+    return 'Are you sure you want to leave?';
+  });
+</script>
+
+<style>
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  width: 20rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 3rem;
+  margin-top: 1rem;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover
+{
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button:hover span {
+  padding-right: 25px;
+  
+}
+    
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button5:hover {
+  
+  color: #FFFFFF;
+}         
+</style>
+</head>
+<body style="background-image: url('wd3.gif');" id="body_html">
+  <p style="border: 0px;margin-bottom: 1rem;width: 100%;margin-top: 0rem; margin-right:3rem;text-align: right;font-family: 'Nunito', sans-serif; color:maroon;font-size: 1.5rem;" id="timer_down">Timer</p>
+  <section style="backface-visibility: hidden;opacity: 0.9;">
+    <button class="button button5" style="width:75%; background: cornflowerblue;text-align: center;">Challenger Week | Live Editor</button>
+    
+    <a class="clearLink" href="#" style="vertical-align:middle"><span>Clear Code</span></a>
+    <textarea id="html" value="" placeholder="HTML" autocapitalize="off" autofocus style="font-family: 'Nunito', sans-serif; font-weight: 600;;border:red solid 3px;"></textarea>
+    <textarea id="css" value="" placeholder="CSS" autocapitalize="off" autofocus style="font-family: 'Nunito', sans-serif; font-weight: 600;border: #f4511e solid 3px;"></textarea>
+    <textarea id="js" value="" placeholder="JavaScript" autocapitalize="off" autofocus style="font-family: 'Nunito', sans-serif; font-weight: 600;border: #f4511e solid 3px;" ></textarea>
+    <iframe id="preview" style="border: #f4511e solid 3px;"></iframe>
+    
+  </section>
+  <script>
+     
+     var da = new Date();
+     
+     var x_month = da.getMonth()+1;
+     var x_day = da.getDate();
+     var x_year = da.getFullYear();
+     var ans = "";
+        if(x_month  == 1)
+        {
+            ans = ans + "Jan ";
+        }
+        else if(x_month == 2)
+        {
+            ans = ans + "Feb ";
+        }
+        else if(x_month == 3)
+        {
+            ans = ans + "Mar ";
+        }
+        else if(x_month == 4)
+        {
+            ans = ans + "Apr ";
+        }
+        else if(x_month == 5)
+        {
+            ans = ans + "May ";
+        }
+        else if(x_month == 6)
+        {
+            ans = ans + "Jun ";
+        }
+        else if(x_month == 7)
+        {
+            ans = ans + "Jul ";
+        }
+        else if(x_month == 8)
+        {
+            ans = ans + "Aug ";
+        }
+        else if(x_month == 9)
+        {
+            ans = ans + "Sep ";
+        }
+        else if(x_month == 10)
+        {
+            ans = ans + "Oct ";
+        }
+        else if(x_month == 11)
+        {
+            ans = ans + "Nov ";
+        }
+        else if(x_month == 12)
+        {
+            ans = ans + "Dec ";
+        }
+        ans = ans + x_day + ", ";
+        ans = ans + x_year;
+        var hr_var = parseInt(da.getHours(),10);
+        hr_var = hr_var+3;
+        if(hr_var >= 24)
+        {
+        ans = ans + " 23:59:59";
+        }
+        else
+        {
+        ans = ans + " ";
+        ans = ans + hr_var;
+        ans = ans + ":";
+        ans = ans + da.getMinutes();
+        ans = ans + ":";
+        ans = ans + da.getSeconds();
+        }
+        
+        document.getElementById("timer_down").innerHTML = ans;
+     var countDownDate = new Date(ans).getTime();
+      
+     
+      var x = setInterval(function() {
+      
+       
+        var now = new Date().getTime();
+      
+        var distance = countDownDate - now;
+          
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+        document.getElementById("timer_down").innerHTML = hours + "h "
+        + minutes + "m " + seconds + "s ";
+        
+        if (distance < 0) {
+          clearInterval(x);
+         document.getElementById("timer_down").innerHTML = "EXPIRED";
+          document.getElementById("body_html").innerHTML = "<p style=\"color: black;width: 100%;font-size: 3rem; font-family: 'Nunito',sans-serif;font-weight: 800; margin-right:3rem;text-align: right;\">Thanks for taking the test!</p>";
+        }
+      }, 1000);
+      </script>
+      
+        
+</body>
+</html>

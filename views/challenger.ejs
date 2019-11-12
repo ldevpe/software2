@@ -1,0 +1,167 @@
+<%- include header.ejs %>
+<section class="engine"><a href="https://google.com">free website maker</a></section><section class="countdown2 cid-rEetfjLWHa" id="countdown2-1b">
+    <div class="mbr-overlay">
+    </div>
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            L`devpe`s Challenger Week</h2>
+        <h3 class="mbr-section-subtitle align-center mbr-fonts-style display-5">(Contest will be alive for the full day)<br><br>Contest will be live in..<br><br></h3>
+    </div>
+    <div class="container pt-5 mt-2">
+        <div class=" countdown-cont align-center p-4">
+            <div class="event-name align-left mbr-white ">
+                <h4 class="mbr-fonts-style display-5">Coder2</h4>
+            </div>
+            <div class="countdown align-center py-2" data-due-date="2019/10/20" id="my_countdown_setter">
+            </div>
+            <div class="daysCountdown" title="Days"></div>
+            <div class="hoursCountdown" title="Hours"></div>
+            <div class="minutesCountdown" title="Minutes"></div>
+            <div class="secondsCountdown" title="Seconds"></div>
+            <div class="event-date align-left mbr-white">
+                <h5 class="mbr-fonts-style display-7"  id="my_header">2019/10/20 - IST</h5>
+            </div>
+        </div>
+
+        
+    </div>
+</section>
+
+<section class="header1 cid-rEeuDI8IRY" id="header16-1e">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 align-center">
+                <h1 class="mbr-section-title mbr-bold pb-3 mbr-fonts-style display-2">
+                    Are you up for the contest?</h1>
+                
+                <p class="mbr-text pb-3 mbr-fonts-style display-5">Experience the intensive web coding with the challenger week.&nbsp;</p>
+                <div class="mbr-section-btn"><a class="btn btn-md btn-black-outline display-4" href="/page5"><span class="mbri-clock mbr-iconfont mbr-iconfont-btn"></span>Take the Test</a></div>
+                <p style="border: 0px;margin-bottom: 1rem;width: 100%;margin-top: 0rem; margin-right:3rem;text-align: right;font-family: 'Nunito', sans-serif; color:maroon;font-size: 1.5rem;" id="timer_down">Timer</p>
+  
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+  <script src="/web/assets/jquery/jquery.min.js"></script>
+  <script src="/popper/popper.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/smoothscroll/smooth-scroll.js"></script>
+  <script src="/dropdown/js/nav-dropdown.js"></script>
+  <script src="/dropdown/js/navbar-dropdown.js"></script>
+  <script src="/tether/tether.min.js"></script>
+  <script src="/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="/countdown/jquery.countdown.min.js"></script>
+  <script src="/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/theme/js/script.js"></script>
+  <script>
+    var da = new Date();
+    var da2 = new Date(da.getTime());
+    //da2.setDate(da.getDate() + (7 + 0 - da.getDay() - 1) % 7 +1);
+    
+    document.getElementById("timer_down").innerHTML = da.getDate();
+   // Sun Oct 13 2019
+    var x_month = da2.getMonth()+1;
+  //  document.getElementById("timer_down").innerHTML = x_month;
+    var x_day = da2.getDate();
+    var x_year = da2.getFullYear();
+    
+    var x_date = "";
+    x_date += x_year;
+    x_date += "/";
+    x_date += x_month;
+    x_date += "/";
+    x_date += x_day;
+  //  document.getElementById("timer_down").innerHTML = x_date;
+    document.getElementById("my_countdown_setter").setAttribute('data_due_date',"2019/10/20");
+    x_date += " - IST";
+   // document.getElementById("my_header").innerHTML = x_date;
+    
+    var ans = "";
+    if(x_month  == 1)
+    {
+        ans = ans + "Jan ";
+    }
+    else if(x_month == 2)
+    {
+        ans = ans + "Feb ";
+    }
+    else if(x_month == 3)
+    {
+        ans = ans + "Mar ";
+    }
+    else if(x_month == 4)
+    {
+        ans = ans + "Apr ";
+    }
+    else if(x_month == 5)
+    {
+        ans = ans + "May ";
+    }
+    else if(x_month == 6)
+    {
+        ans = ans + "Jun ";
+    }
+    else if(x_month == 7)
+    {
+        ans = ans + "Jul ";
+    }
+    else if(x_month == 8)
+    {
+        ans = ans + "Aug ";
+    }
+    else if(x_month == 9)
+    {
+        ans = ans + "Sep ";
+    }
+    else if(x_month == 10)
+    {
+        ans = ans + "Oct ";
+    }
+    else if(x_month == 11)
+    {
+        ans = ans + "Nov ";
+    }
+    else if(x_month == 12)
+    {
+        ans = ans + "Dec ";
+    }
+    ans = ans + x_day + ", ";
+        ans = ans + x_year;
+        ans = ans + " 23:59:59";
+    document.getElementById("timer_down").innerHTML = ans;
+    // Jan 5, 2021 15:37:25
+     
+     var countDownDate = new Date("Oct 20, 2019 00:00:01").getTime();
+     
+     var x = setInterval(function() {
+  
+   
+  var now = new Date().getTime();
+
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+  document.getElementById("timer_down").innerHTML = days + "d "+ hours + "h "
+    + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+   document.getElementById("timer_down").innerHTML = "EXPIRED";
+   document.getElementById("my_test").setAttribute("href","/page5");
+   }
+}, 1000);
+
+    </script>
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>

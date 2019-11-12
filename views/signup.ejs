@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="L`devpe`">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="/images/picture1-122x184.png" type="image/x-icon">
+  <meta name="description" content="L`devpe`">
+  
+  <title>login</title>
+  <link rel="stylesheet" href="/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="/tether/tether.min.css">
+  <link rel="stylesheet" href="/animatecss/animate.min.css">
+  <link rel="stylesheet" href="/socicon/css/styles.css">
+  <link rel="stylesheet" href="/dropdown/css/style.css">
+  <link rel="stylesheet" href="/theme/css/style.css">
+  <link rel="preload" as="style" href="/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="/mobirise/css/mbr-additional.css" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+  <style>
+        .container{
+                width:fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 1.5rem;
+                height: fit-content;
+            }
+            body{
+                font-weight: bold;
+                font-family: Nunito;
+                background-color: rgb(30,69,97);
+                color: rgb(255, 255, 255);
+            }
+            form{
+               
+                display:flex;
+                flex-direction: column;
+                justify-content:space-around;
+                align-items:center;
+                align-content: space-between;
+                height: fit-content;
+            }
+            form div{
+                display: flex;
+                flex-direction: column;
+                align-items:flex-start;
+                justify-content: center;
+                font-size: 0.85rem;
+                padding: 0.5rem;
+                width: 30rem;
+                margin: 1rem;
+                border-radius: 15px;
+                color: rgb(242,244,245);
+            }
+            form div input {
+                border-color: white;
+                width: inherit;
+                height:fit-content;
+                font-size: 1.1rem;
+                background-color: inherit;
+                margin-top: 0.4rem;
+                padding:0.1rem;
+                font-style: italic;
+                color: rgb(255,255,255);
+                border-width:0;
+                border-left-width: 0.2rem;
+            }
+            form div input[type="date"]{
+                height: 2rem;
+            }
+            input[type="submit"]{
+                display:block;
+                width:fit-content;
+            }
+            input[type="date"]::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+            }
+            input[type="date"]::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+            input[type="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+            }
+            input[type="submit"] {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                background-color: white;
+                width:93%;
+                border-radius: 8px;
+                font-family: Nunito;
+                font-weight: bold;
+                padding: 0;
+                font-size: 1.3rem;
+                color:black;
+            }
+            h1{
+                font-size: 3.5rem;
+                font-weight: bold; 
+                font-family: Nunito;
+                margin-left:3rem;
+                margin-top: 1rem;
+                margin-bottom:0;
+                padding:0;
+            }
+            p{
+                margin-left:4rem;
+                font-size: 1.7rem;
+                padding: 0;
+                margin-top:0;
+            }
+            input[type="submit"]:hover{
+                transform:scale(1.1);
+            }
+  </style>
+  
+</head>
+<body>
+ 
+<section class="engine" style="margin-top:2rem;"><a href="https://google.com"></a></section><section class="header11 cid-rHx7Td5WLR mbr-fullscreen" id="header11-3l">
+
+  
+    
+    <div class="container align-left" style="margin-top:2rem;">
+        <div class="media-container-column mbr-white col-md-12">
+            <h3 class="mbr-section-subtitle py-3 mbr-fonts-style display-5">
+                    JOIN L`devpe` TODAY!
+            </h3>
+            <h1 class="mbr-section-title py-3 mbr-fonts-style display-1">
+                    Sign up to contribute
+            </h1>
+            <p></p>
+            <div class="container">
+                <form action="http://localhost:3000/signup" method="POST">
+                    <p style="margin:0;margin-left: 2rem;align-self: flex-start;font-size:1.5rem;font-weight: normal;color: lightgreen;"> <%= message %></p>
+                    <div>
+                        <label for="name" >NAME</label>
+                        <input id = "name" name="name" type="text" placeholder="name" required = "true" autocomplete="off" />
+                    </div>
+                    <div>
+                        <label for="Emailid" >EMAIL</label>
+                        <input id = "Emailid" name="email" type="email" placeholder="email" required = "true" autocomplete="off" />
+                    </div>
+                    <div>
+                        <label for="password">PASSWORD</label>
+                        <input id = "password" name="password" type="password" placeholder="password" required = "true" max ="16" min = "8" autocomplete="off" />
+                    </div>
+                    <span style="align-self: flex-start;margin-left: 2rem;display:flex;flex-direction: row;align-items: center"><input type = "checkbox" id="visible" name = "visibility" onclick="show()" /><p style="font-size:1rem;display:inline;margin:0;margin-left:0.7rem;">show password</p></span>
+                    <div>
+                        <label for="security">WHAT IS YOUR FAVORITE SPORT?</label>
+                        <input id = "security" name="security" type="text" required = "true" placeholder="cricket" required="true" autocomplete="off" />
+                    </div>
+                    <input type="submit" value="Join  l`devpe`" />
+                </form>
+            </div>
+            <script>
+                function show(){
+                    var x = document.getElementById("visible");
+                    var y = document.getElementById("password");
+                    var z = document.querySelector("span p");
+                    if(x.checked === true)
+                    {
+                        y.setAttribute("type","text");
+                        z.innerHTML = "hide password";
+                    }
+                    else{
+                        y.setAttribute("type","password");
+                        z.innerHTML = "show password";
+                    }
+                }
+            </script>
+    </div>
+
+    </div>
+</section>
+
+
+  <script src="/web/assets/jquery/jquery.min.js"></script>
+  <script src="/popper/popper.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/smoothscroll/smooth-scroll.js"></script>
+  <script src="/tether/tether.min.js"></script>
+  <script src="/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="/dropdown/js/nav-dropdown.js"></script>
+  <script src="/dropdown/js/navbar-dropdown.js"></script>
+  <script src="/theme/js/script.js"></script>
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  </body>
+</html>
