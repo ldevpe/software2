@@ -7,6 +7,7 @@ var reply = require('./database4.js');
 var bodyParser = require('body-parser');
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
+var fs = require('fs');
 
 app.use(express.static('css'));
 app.use(express.static('assets'));
@@ -37,7 +38,6 @@ app.post("/login",function(req,res,next){
             result[0].save(function(err){
                 if(err) throw err;
             });
-            console.log(result[0]);
             res.redirect("/");
         }
         else{
@@ -172,8 +172,6 @@ app.get("*",function(req,res,next){
             }
             else{
                 req.user = result;
-                console.log(result);
-                console.log(req.user);
                 next();
             }
         });
@@ -194,8 +192,6 @@ app.post("*",function(req,res,next){
             }
             else{
                 req.user = result;
-                console.log(result);
-                console.log(req.user);
                 next();
             }
         });
@@ -218,7 +214,6 @@ app.get("/disc/:id/q/:questionid",function(req,res,next){
     reply.find({textid:req.params.id,questionid:req.params.questionid},
         function(err,results){
             if(err) throw err;
-            console.log(results);
             res.status(200).json({
                 results:results
             });
@@ -226,7 +221,6 @@ app.get("/disc/:id/q/:questionid",function(req,res,next){
 });
 
 app.post("/disc/:id/q/:questionid",function(req,res,next){
-    console.log(req.body.solution);
     var newreply = new reply({
         textid:req.params.id,
         questionid:req.params.questionid,
@@ -235,10 +229,22 @@ app.post("/disc/:id/q/:questionid",function(req,res,next){
     });
     newreply.save(function(err,n){
         if (err) throw err;
-        console.log(n);
         res.status(200).json({
             results:null
         });
+    });
+});
+
+app.post("/disc/:id/q/:questionid/likes",function(req,res,next){
+    disc.find({textid:req.params.id,questionid:req.params.questionid},function(err,results){
+        if(err) throw err;
+        results[0].likes = results[0].likes+1;
+        results[0].save(function(err,n){
+            if(err) throw err;
+            res.status(200).json({
+                likes:n.likes
+            });
+        }); 
     });
 });
 
@@ -250,7 +256,6 @@ app.post("/disc/:id/post",function(req,res,next){
     else
     disc.find({textid:req.params.id},function(err,result1){
         if(err) throw err;
-        console.log(req.user);
         var newdisc = new disc({
             textid:req.params.id,
             question:req.body.question,
@@ -260,7 +265,6 @@ app.post("/disc/:id/post",function(req,res,next){
         });
         newdisc.save(function(err,n){
             if(err) throw err;
-            console.log(n);
             res.redirect("/disc/"+req.params.id);
         });
     });
@@ -269,7 +273,39 @@ app.post("/disc/:id/post",function(req,res,next){
 app.get("/profile",function(req,res,next){
     contribution.find({userid:req.user._id},function(err,results){
         if(err) throw err;
+        console.log(results);
         res.render("page9.ejs",{name:req.user.name,email:req.user.email,contributions:results});
+    });
+});
+
+function makeid(length) {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+       result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+ }
+ 
+
+app.post("/contribute",function(req,res,next){
+    var lin = "/contributions/"+req.user.email+'/'+makeid(15)+'.html';
+    var newcontribution = new contribution({
+        userid:req.user._id,
+        source: lin,
+        heading:req.body.heading,
+        description:req.body.description
+    });
+    newcontribution.save(function(err,n){
+        if(err) throw err;
+        console.log(n);
+        fs.writeFile('/views'+lin,req.body.source,
+        function(err){
+            if(err) throw err;
+            console.log("/contribution - saved");
+            res.redirect("/profile");
+        });
     });
 });
 

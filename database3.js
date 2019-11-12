@@ -6,9 +6,6 @@ mongoose.connect("mongodb://localhost:27017/SEAUG2019",{useNewUrlParser: true,us
 });
 
 var contributionSchema = new mongoose.Schema({
-    contributionid:{
-        type:Number,required:true
-    },
     postedtime:{
         type:Date,default:Date.now()
     },

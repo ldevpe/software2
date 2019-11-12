@@ -100,9 +100,6 @@ textarea:focus {
   border-color: #33dd33;
 }
 
-textarea#js {
-  margin: 15px 0 0 0;
-}
 
 iframe {
   width: 100%;

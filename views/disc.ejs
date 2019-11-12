@@ -459,7 +459,7 @@
     </div>   
 
     <div style="margin-top: 1.5rem;background: white;width:100%;" id="divMain">
-        <span class="divLeft">
+        <span class="divLeft" style="width:10%;">
             <a id="rcorners2" href="http://localhost:3000/disc/0">HTML</a>
             <a id="rcorners2" href="http://localhost:3000/disc/1">CSS</a> 
             <a id="rcorners2" href="http://localhost:3000/disc/2">Bootstrap</a>
@@ -474,11 +474,11 @@
             <a id="rcorners2" href="http://localhost:3000/disc/11">ASP</a>
             <a id="rcorners2" href="http://localhost:3000/disc/12">Node.js</a>
             </span>
-        <span class="divRight">
+        <span class="divRight" style="width:70%;">
             <% var it = 0;message.forEach((message) => { %>
             <div class="card" style="margin-bottom: 2rem;margin-top: 2rem;">
                 <div class="container" style="margin-bottom: 2rem;margin-top: 2rem;">
-                    <h4><b><%= message.question %></b> <button style="float: right;" class="like_b" onclick="flike(0)" id="blike0">Like</button></h4> 
+                    <h4><b><%= message.question %></b> <button style="float: right;" class="like_b" onclick="flike(<%=it%>,<%= message.questionid %>)" id="blike0">Like</button></h4> 
                     <p style="margin-top: 1rem;">
                       <span class="user_name"><%= message.username %></span>
                       <span class="reply_info"><%= message.postedtime %></span>
@@ -486,7 +486,7 @@
                     <span  style="color:rgb(158, 163, 173);margin-left: 2rem;font-size: 1.5rem;">&#128065;</span>
                     <span style="font-family: 'Nunito', sans-serif;font-weight: bold;"><%= message.viewcount %></span>
                     <span style="color:red;margin-left: 2rem;">&#10084;</span>
-                    <span style="font-family: 'Nunito', sans-serif;font-weight: bold;"><%= message.likes %></span>
+                    <span style="font-family: 'Nunito', sans-serif;font-weight: bold;" id = "likes<%=it%>"><%= message.likes %></span>
                     <span style="color:cornflowerblue;margin-left: 2rem;font-size: 1.2rem;">&#9993;</span>
                     <span style="font-family: 'Nunito', sans-serif;font-weight: bold;"><%= message.commentscount %></span>
                     <p></p>
@@ -509,17 +509,6 @@
             </div>
             <% it++; }); %>
         </span>
-        
-        <script>
-            function flike(num)
-            {
-                
-                // increment the likes count
-                <%= message.likes %> = <%= message.likes %> + 1;
-
-            }    
-        </script>
-        
         <script>
             function fun1(it,num){
                 var xhttp = new XMLHttpRequest();
@@ -536,7 +525,6 @@
                     }
                 };
                 xhttp.open("GET","http://localhost:3000/disc/<%= id %>/q/"+num,true);
-                // xhttp.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
                 xhttp.send();
             }
             function fun(it,num)
@@ -554,6 +542,21 @@
                 xhttp.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
                 var val_ = document.getElementById("info"+it).value;
                 xhttp.send('solution='+val_);
+            }
+            function flike(it,num)
+            {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function(){
+                    if(this.readyState == 4 && this.status == 200)
+                    {
+                        var json = JSON.parse(this.responseText);
+                        document.getElementById("likes"+it).innerText = json.likes;
+                        console.log(json);
+                    }
+                };
+                xhttp.open("POST","http://localhost:3000/disc/<%= id %>/q/"+num+"/likes",true);
+                // xhttp.setRequestHeader('Content-type',"application/x-www-form-urlencoded");
+                xhttp.send();
             }
         </script>
         
