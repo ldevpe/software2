@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="/images/picture1-122x184.png" type="image/x-icon">
   <meta name="description" content="L`devpe`">
   
-  <title>profile</title>
+  <title>Profile</title>
   <link rel="stylesheet" href="/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
@@ -47,7 +47,7 @@
   <link rel="apple-touch-icon-precomposed" href="img/ico/apple-touch-icon-57-precomposed.png">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.10.15, mobirise.com">
+  <meta name="generator" content="L`devpe`">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="/images/picture1-122x184.png" type="image/x-icon">
   
@@ -67,6 +67,123 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+
+.contain {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.html{
+        background:black;
+        color: white;
+    }
+    .css{
+        background: #4CAF50;
+        color: white;
+    }
+    .bootstrap{
+        background:#f4511e;
+        color: white;    
+    }
+    .js{
+        background:#0000FF;
+        color: white;
+    
+    }
+    .angularJS{
+        background:#000080;
+        color: white;
+    
+    }
+    .jQuery{
+        background:#800080;
+        color: white;
+    
+    }
+
+    .json{
+        background:#FF00FF;
+        color: white;
+    }
+    .ajax{
+        background:#800000;
+        color: white;
+    }
+    .react{
+        background:#808000;
+        color: white;
+    }
+    .php{
+        background:#00FF00;
+        color: white;
+    }
+    .sql{
+        background:#008000;
+        color: white;
+    }
+    .asp{
+        background:#00FFFF;
+        color: white;
+    }
+    .nodejs{
+        background:#008080;
+        color: white;
+    }
+
+.contain input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.contain:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.contain input:checked ~ .checkmark {
+  background-color: red;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.contain input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.contain .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .button span {
@@ -96,9 +213,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 100%;
-    overflow:scroll;
-    height:fit-content;
-    max-height: 40rem;
+    height: fit-content;
     margin:1rem;
     padding: 2rem 1rem;
     }
@@ -108,32 +223,13 @@
     }
   </style>
   
-  <script>
-        var myVar = setInterval(myTimer, 10000);
-        function myTimer() {
-          document.getElementById("my_home").innerHTML = "<span class=\"mbri-home mbr-iconfont mbr-iconfont-btn\"></span>Home";
-          
-          document.getElementById("my_home").setAttribute("href","/");
-        }
-        </script>
-      <script>
-        var myVar = setInterval(myTimer, 6000);
-        function myTimer() {
-          document.getElementById("my_home").innerHTML = "<span class=\"mbri-unlock mbr-iconfont mbr-iconfont-btn\"></span>Logout";
-          
-          document.getElementById("my_home").setAttribute("href","https://google.com");
-          
-          
-            
-        }
-        </script>
 </head>
 <body>
   <section class="menu cid-qTkzRZLJNu" once="menu" id="menu1-3d">
 
     
 
-    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm" style="background: black;">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <div class="hamburger">
                 <span></span>
@@ -154,11 +250,14 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-                    <a class="nav-link link text-white display-4" href="/" aria-expanded="false" id="my_home"><span class="mbri-home mbr-iconfont mbr-iconfont-btn"></span>
-                        Home</a>
-                </li></ul>
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-success-outline display-4" href="/explore"><span class="socicon socicon-buffer mbr-iconfont mbr-iconfont-btn"></span>Explore</a> <a class="btn btn-sm btn-secondary-outline display-4" href="/progress"><span class="mobi-mbri mobi-mbri-speed mbr-iconfont mbr-iconfont-btn"></span>Progress</a> <a class="btn btn-sm btn-white-outline display-4" href="/challenger"><span class="mbri-edit mbr-iconfont mbr-iconfont-btn"></span>Challenger Week</a>  <a class="btn btn-sm btn-primary-outline display-4" href="/resources"><span class="mbri-bookmark mbr-iconfont mbr-iconfont-btn"></span>Resources</a> <a class="btn btn-sm btn-secondary-outline display-4" href="/daily_practice" target="_blank"><span class="mobi-mbri mobi-mbri-code mbr-iconfont mbr-iconfont-btn"></span>Editor</a></div>
-        </div>
+                <a class="nav-link link text-white display-4" href="/logout" id="my_home" style="font-size: 0.85rem;">
+                Logout</a>
+            </li></ul>
+     
+        <div class="navbar-buttons mbr-section-btn">
+                <a class="btn btn-sm btn-success-outline display-4" href="/takeaways" style="color: white;">Take aways</a>
+            <a class="btn btn-sm btn-success-outline display-4" href="/disc/0" style="color: white;">Forum</a> <a class="btn btn-sm btn-secondary-outline display-4" href="/profile" style="color: white;border-color: #0000FF;">Profile</a> <a class="btn btn-sm btn-white-outline display-4" href="/challenger" style="color: white;">C Week</a> <a class="btn btn-sm btn-primary-outline display-4" href="/resources" style="color: white;">Links</a> <a class="btn btn-sm btn-secondary-outline display-4" href="/daily_practice" target="_blank" style="color: white;">Editor</a></div>
+     </div>
     </nav>
 </section>
 
@@ -179,7 +278,7 @@
                 <p></p>
                 <p class="mbr-text pb-3 mbr-fonts-style display-5">
                     I am a L`devpe` Contributor</p>
-                <div class="mbr-section-btn"><p class="btn btn-md btn-white-outline display-4" style="border-radius: 2rem;" onclick="f2(0)"># My Contributions</p></div>
+                <div class="mbr-section-btn"><p class="btn btn-md btn-white-outline display-4" style="border-radius: 2rem;color: white;border-color: #0000FF;" onclick="f2(0)"># My Contributions</p></div>
             </div>
         </div>
     </div>
@@ -248,6 +347,80 @@ function f2(num)
                 <span style="color: #000080;">Source Code (html)</span>
                 <textarea name="source" type="text" style="width:100%;border:1px solid #000080;min-height: 20rem;"></textarea>
                 <p></p>
+                <label class="contain" style="display: inline;">                    
+                    <span class="html" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">HTML</span>
+                    <input name="post" value="html" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>                
+                <label class="contain" style="display: inline;">    
+                    <span class="css" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">CSS</span>
+                    <input name="post" value="css" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain" style="display: inline;">
+                    <span class="bootstrap" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">Bootstrap</span>
+                    <input name="post" value="bootstrap" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain" style="display: inline;">
+                    <span class="js" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">Java Script</span>
+                    <input name="post" value="js" type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain" style="display: inline;">
+                    <span class="jQuery" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">jQuery</span>
+                    <input name="post" value="jQuery" type="checkbox" >
+                    <span class="checkmark"></span>
+                </label>
+                <label class="contain" style="display: inline;">
+                    <span class="angularJS" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">angularJS</span>
+                    <input name="post" value="angularJS" type="checkbox" >
+                    <span class="checkmark"></span>                    
+                </label>
+                <p></p>
+                <p></p>
+                <label class="contain" style="display: inline;">
+                        <span class="json" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">JSON</span>
+                        <input name="post" value="json" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="ajax" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">Ajax</span>
+                        <input name="post" value="ajax" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="react" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">React</span>
+                        <input name="post" value="react" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="php" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">PHP</span>
+                        <input name="post" value="php" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="sql" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">SQL</span>
+                        <input name="post" value="sql" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="asp" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">ASP</span>
+                        <input name="post" value="asp" type="checkbox" >
+                        <span class="checkmark"></span>
+                        
+                </label>
+                <label class="contain" style="display: inline;">
+                        <span class="nodejs" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;">Node.js</span>
+                        <input name="post" value="nodejs" type="checkbox" >
+                        <span class="checkmark"></span>       
+                </label>
+                <p></p>
                <input type="submit" name="POST" class="button" style="width: 12rem;background:crimson;">
             </form>
         </div>
@@ -258,10 +431,13 @@ function f2(num)
                    <p></p>
                     <h4 style="color: #000000;" id="my_desc0"><%= result.description %></h4>
                     <p></p>
+                    <p style="background: grey;margin: 0px;margin-top: 1rem;min-height: 6rem;align-content: center;padding-top: 2.5rem;padding-left: 1rem;">
+                        <% result.tags.forEach( post => { %>
+                        <span class="<%= post %>" style="padding-left:1rem;padding-right:1rem;padding-top:0.5rem;padding-bottom:0.5rem;"><%= post %></span>
+                        <%});%>
+                      </p>
                     <div id="my_code0">
-                        <a class="clearLink" href="#" style="vertical-align:middle;float:right; background-color: hsla(240, 100%, 50%, 0.2);border: 3px solid #0000FF;"><span>Clear Code</span></a>
-                        <textarea id="html" value="" placeholder="HTML" autocapitalize="off" autofocus style="font-family: 'Nunito', sans-serif; font-weight: 500;border:3px solid #0000FF;color: white; font-size: 1.2rem;background: black;"><%= result.source %></textarea>
-                        <iframe src=<%= result.source %></iframe> style="border: 3px solid #0000FF;background: white;"></iframe>
+                        <iframe src="http://localhost:3000/contributions/<%= result.source %>" style="background: white;height: 50rem;"></iframe>
                     </div>
         </div>
         <% }); %>

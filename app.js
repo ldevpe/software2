@@ -7,12 +7,13 @@ var reply = require('./database4.js');
 var bodyParser = require('body-parser');
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
-var fs = require('fs');
+var fs = require('fs-extra');
 
 app.use(express.static('css'));
 app.use(express.static('assets'));
 app.use(express.static('img'));
 app.use(express.static('js'));
+app.use(express.static('contributions'));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -288,24 +289,36 @@ function makeid(length) {
     return result;
  }
  
+ app.get("/contributions/:id",function(req,res,next){
+     res.render(req.params.id);
+ });
 
 app.post("/contribute",function(req,res,next){
-    var lin = "/contributions/"+req.user.email+'/'+makeid(15)+'.html';
+    var lin = req.user.email+makeid(15)+'.ejs';
+    console.log(lin);
     var newcontribution = new contribution({
         userid:req.user._id,
         source: lin,
         heading:req.body.heading,
+        tags:req.body.post,
         description:req.body.description
     });
     newcontribution.save(function(err,n){
         if(err) throw err;
         console.log(n);
-        fs.writeFile('/views'+lin,req.body.source,
-        function(err){
+        fs.outputFile("views/"+lin,req.body.source,
+            function(err){
             if(err) throw err;
             console.log("/contribution - saved");
             res.redirect("/profile");
         });
+    });
+});
+
+app.get("/takeaways",function(req,res,next){
+    contribution.find({},function(err,results){
+        if(err) throw err;
+        res.render("page10.ejs",{contributions:results,user:req.user.name});
     });
 });
 
